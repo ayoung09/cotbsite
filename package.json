@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack -w & nodemon --watch server -e js, html server/main.js",
+    "start": " -w & nodemon --watch server -e js,html server/main.js",
     "seed": "node ./bin/seed",
-    "db-init": "pg-init cotb_db",
+    "db-init": "pg-init cotb_db"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.15.3",
+    "bluebird": "^3.4.7",
     "body-parser": "^1.16.1",
     "bootstrap": "^3.3.7",
     "chalk": "^1.1.3",

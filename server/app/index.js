@@ -1,7 +1,8 @@
 'use strict';
-var path = require('path');
-var express = require('express');
-var app = express();
+const path = require('path');
+const express = require('express');
+const app = express();
+
 
 require('./configure')(app);
 
@@ -10,6 +11,7 @@ app.use('/api', require('./routes'));
 app.get('/*', (req, res) => {
   res.sendFile(app.get('indexHTMLPath'));
 });
+
 
 app.use((err, req, res, next) => {
   console.error(err, typeof next);
