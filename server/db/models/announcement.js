@@ -20,6 +20,15 @@ module.exports = db.define('announcement', {
   isEvent: {
     type: Sequelize.ENUM('yes', 'no'),
     allowNull: false,
+  },
+}, {
+  classMethods: {
+    findNotExpired: function() {
+      let now = new Date;
+      return this.findAll({where: {
+        date: { $gt: now }
+      }});
+    }
   }
 });
 

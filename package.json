@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch server -e js,html server/main.js",
-    "seed": "node ./bin/seed",
-    "db-init": "pg-init cotb_db"
+    "seed": "node seed.js"
   },
   "author": "",
   "license": "ISC",

@@ -2,7 +2,6 @@
 
 const Promise = require('bluebird');
 const db = require('./server/db/db')
-require('./server/db/models')
 const { Church, Vision, Value } = require('./server/db/models');
 
 
@@ -33,7 +32,8 @@ db.sync({force: true})
   console.log('Dropped old data, now inserting data');
   return Promise.all([churchProm, visionProm, valueProm]);
 })
-.then(() => {
+.then((resolvedData) => {
+  console.log('THIS IS RESOLVED: ', resolvedData);
   console.log('Finished inserting data (press ctrl-c to exit)');
 })
 .catch(err => {
