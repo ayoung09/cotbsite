@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": " -w & nodemon --watch server -e js,html server/main.js",
+    "start": "nodemon --watch server -e js,html server/main.js",
     "seed": "node ./bin/seed",
     "db-init": "pg-init cotb_db"
   },

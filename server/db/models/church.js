@@ -13,5 +13,9 @@ module.exports = db.define('church', {
   },
   time: {
     type: Sequelize.STRING,
+  },
+  city: {
+    type: Sequelize.STRING,
+    allowNull: false,
   }
 });

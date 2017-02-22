@@ -22,12 +22,18 @@ router.post('/', (req, res, next) => {
 
 
 router.put('/:staffId', (req, res, next) => {
-
+  Staff.findById(req.params.staffId)
+  .then(staffMember => staffMember.update(req.body))
+  .then(updatedStaff => res.status(201).json(updatedStaff))
+  .catch(next);
 });
 
 
-router.delete('/', (req, res, next) => {
-
+router.delete('/:staffId', (req, res, next) => {
+  Staff.findById(req.params.staffId)
+  .then(staffMember => staffMember.destroy())
+  .then(() => res.status(204).end())
+  .catch(next);
 });
 
 

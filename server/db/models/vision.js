@@ -10,6 +10,5 @@ module.exports = db.define('vision', {
   },
   belief: {
     type: Sequelize.TEXT,
-    allowNull: false,
   }
 });

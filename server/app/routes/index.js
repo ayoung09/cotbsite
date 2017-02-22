@@ -31,11 +31,11 @@ router.param('churchId', (req, res, next, id) => {
     return null;
   })
   .catch(next);
-})
+});
 
 router.get('/:churchId', (req, res) => {
   res.json(req.church);
-})
+});
 
 
 
